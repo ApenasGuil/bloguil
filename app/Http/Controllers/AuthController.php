@@ -32,4 +32,20 @@ class AuthController extends Controller
 
         dd('Erro ao cadastrar novo usuário.');
     }
+
+    public function login(Request $request)
+    {
+        $credentials = [
+            'email' => $request->email,
+            'password' => $request->password,
+        ];
+        
+        if (Auth::attempt($credentials)) { // Verificação no DB, para ver se os dados enviados pelo form 'login' batem
+            dd('Usuário logado com sucesso!');
+        } else {
+            dd('Credenciais não combinam.');
+        };
+
+        dd('Erro ao logar usuário.');
+    }
 }

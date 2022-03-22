@@ -6,7 +6,7 @@
 
 - View
   - [x] Registro de usuário
-  - [ ] Login
+  - [x] Login
   - [ ] Master blade (Bootstrap)
   - [ ] Dashboard (Admin)
   - [ ] Listagem de Usuários

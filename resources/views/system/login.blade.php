@@ -5,18 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Register</title>
+    <title>Login</title>
 </head>
 
 <body>
-    <h1>Register</h1>
-    <form action="{{ route('register.do') }}" method="POST">
+    <h1>Login</h1>
+    <form action="{{ route('login.do') }}" method="POST">
         @csrf
 
-        <div>
-            <label for="name">Nome</label>
-            <input type="text" name="name" id="name">
-        </div>
         <div>
             <label for="email">Email</label>
             <input type="email" name="email" id="email">
@@ -27,10 +23,10 @@
         </div>
         <div>
             <small>
-                Já possui login? <a href="{{ route('form.login') }}">Entrar</a>
+                Novo por aqui? <a href="{{ route('form.register') }}">Cadastrar</a>
             </small>
         </div>
-        <button type="submit">Cadastrar</button>
+        <button type="submit">Entrar</button>
     </form>
 </body>
 

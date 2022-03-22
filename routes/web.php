@@ -22,5 +22,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::view('/login', 'system.login')->name('form.login');
+Route::post('/login', [AuthController::class, 'login'])->name('login.do');
 Route::view('/register', 'system.register')->name('form.register');
 Route::post('/register', [AuthController::class, 'register'])->name('register.do');
