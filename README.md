@@ -5,7 +5,7 @@
 ## Features
 
 - View
-  - [ ] Registro de usuário
+  - [x] Registro de usuário
   - [ ] Login
   - [ ] Master blade (Bootstrap)
   - [ ] Dashboard (Admin)
