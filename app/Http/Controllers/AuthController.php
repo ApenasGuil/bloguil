@@ -24,7 +24,7 @@ class AuthController extends Controller
         if ($user->save()) {
             if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
                 auth()->login($user);
-                dd('Usuário registrado e logado com sucesso!');
+                return redirect()->route('Registrado e logado'); // TEM DE haver um redirecionamento, pois o login só é efetivado após cair em uma rota
             } else {
                 dd('Erro ao efetuar login.');
             }
@@ -41,11 +41,19 @@ class AuthController extends Controller
         ];
         
         if (Auth::attempt($credentials)) { // Verificação no DB, para ver se os dados enviados pelo form 'login' batem
-            dd('Usuário logado com sucesso!');
+            return redirect()->route('Logado'); // TEM DE haver um redirecionamento, pois o login só é efetivado após cair em uma rota
         } else {
-            dd('Credenciais não combinam.');
+            return redirect()->route('Não logado'); // TEM DE haver um redirecionamento, pois o login só é efetivado após cair em uma rota
         };
 
         dd('Erro ao logar usuário.');
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout(); // Deslogando usuário e apagando as sessões do navegador e redirecionando à tela de login
+        $request->session()->invalidate(); // Invalida e destróia a session() atual
+        $request->session()->regenerateToken();
+        return redirect()->route('form.login'); // Retorna para login view após destruir a session()
     }
 }

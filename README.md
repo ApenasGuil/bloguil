@@ -8,6 +8,8 @@
   - [x] Registro de usuário
   - [x] Login
   - [ ] Master blade (Bootstrap)
+  - [ ] Registro de post
+  - [ ] Visualização de post
   - [ ] Dashboard (Admin)
   - [ ] Listagem de Usuários
   - [ ] Edição Usuário
@@ -15,8 +17,10 @@
   - [ ] Edição de Post
   - [ ] Componente de erro
 - Controller
-  - [ ] Efetuar login
-  - [ ] Logout
+  - [x] Efetuar login
+  - [x] Cadastrar usuário
+  - [ ] Cadastrar post
+  - [x] Logout
   - [ ] CRUD Usuário
     - [ ] Validator de inputs
     - [ ] Preferencias do usuário
