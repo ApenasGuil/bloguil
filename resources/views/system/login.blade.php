@@ -1,33 +1,27 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+@extends('layouts.master')
+@section('title', 'Login')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
-</head>
-
-<body>
-    <h1>Login</h1>
-    <form action="{{ route('login.do') }}" method="POST">
-        @csrf
-
-        <div>
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email">
+@section('content')
+    <div class="row mx-1 d-flex justify-content-around">
+        <div class="col-md-12">
+            <h1>Login</h1>
+            <form action="{{ route('login.do') }}" method="POST">
+                @csrf
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Senha</label>
+                    <input type="password" class="form-control" name="password" id="password">
+                </div>
+                <div class="mb-3">
+                    <small>
+                        Novo por aqui? <a href="{{ route('form.register') }}">Cadastrar</a>
+                    </small>
+                </div>
+                <button type="submit" class="btn btn-primary">Entrar</button>
+            </form>
         </div>
-        <div>
-            <label for="password">Senha</label>
-            <input type="password" name="password" id="password">
-        </div>
-        <div>
-            <small>
-                Novo por aqui? <a href="{{ route('form.register') }}">Cadastrar</a>
-            </small>
-        </div>
-        <button type="submit">Entrar</button>
-    </form>
-</body>
-
-</html>
+    </div>
+@endsection

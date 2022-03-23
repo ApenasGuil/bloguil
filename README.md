@@ -7,14 +7,14 @@
 - View
   - [x] Registro de usuário
   - [x] Login
-  - [ ] Master blade (Bootstrap)
+  - [x] Master blade (Bootstrap)
   - [ ] Registro de post
-  - [ ] Visualização de post
+  - [ ] Visualização de post específico
+  - [ ] Edição de Post
+  - [ ] Listagem de Posts
   - [ ] Dashboard (Admin)
   - [ ] Listagem de Usuários
   - [ ] Edição Usuário
-  - [ ] Listagem de Posts
-  - [ ] Edição de Post
   - [ ] Componente de erro
 - Controller
   - [x] Efetuar login
