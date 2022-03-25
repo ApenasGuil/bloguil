@@ -14,12 +14,6 @@ class PostController extends Controller
      */
     public function index()
     {
-        $post = new Post();
-        $post->user_id = '18';
-        $post->title = 'Title';
-        $post->subtitle = 'Subtitle';
-        $post->content = 'Content';
-        $post->save();
         $posts = Post::with('user')->get();
         return view('post.posts', ['posts' => $posts]);
     }
