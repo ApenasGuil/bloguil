@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\{
 };
 use App\Http\Controllers\{
     AuthController,
+    PostController,
 };
 
 /*
@@ -27,3 +28,5 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.do');
 Route::view('/register', 'system.register')->name('form.register');
 Route::post('/register', [AuthController::class, 'register'])->name('register.do');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout.do');
+
+Route::resource('post', PostController::class)->names('post');
